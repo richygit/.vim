@@ -78,6 +78,9 @@ set backupdir=.,$TEMP
 
 " nerd tree key mapping
 map <C-n> :NERDTreeToggle<CR>
+set autochdir
+let NERDTreeChDirMode=2
+nnoremap <C-n> :NERDTree .<CR>
 
 " ack.vim key mapping
 nmap <D-F> :Ack<space>
