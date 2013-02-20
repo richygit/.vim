@@ -76,3 +76,8 @@ set backupdir=.,$TEMP
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 
+" nerd tree key mapping
+map <C-n> :NERDTreeToggle<CR>
+
+" set theme
+colorscheme dawn

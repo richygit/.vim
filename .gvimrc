@@ -42,8 +42,7 @@ if has("gui_macvim")
   map <Leader>= <C-w>=
   imap <Leader>= <Esc> <C-w>=
 
-
-" ctrl-p mapping
+  " ctrl-p mapping
   macmenu &File.New\ Tab key=<D-T>
   map <D-t> :CtrlP<CR>
   imap <D-t> <Esc>:CtrlP<CR>
