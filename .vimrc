@@ -79,5 +79,12 @@ set backupdir=.,$TEMP
 " nerd tree key mapping
 map <C-n> :NERDTreeToggle<CR>
 
+" ack.vim key mapping
+nmap <D-F> :Ack<space>
+
 " set theme
 colorscheme dawn
+
+" closetag autoload
+:let g:closetag_html_style=1
+:au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim 
