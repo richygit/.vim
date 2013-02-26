@@ -77,9 +77,8 @@ let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
 " nerd tree key mapping
-set autochdir
-let NERDTreeChDirMode=2
-map <C-n> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=0
+nnoremap <leader>n :NERDTreeToggle .<CR>
 
 " ack.vim key mapping
 nmap <D-F> :Ack<space>
