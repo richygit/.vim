@@ -14,6 +14,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set cindent
+set smartindent
+set autoindent
 
 " Searching
 set hlsearch
@@ -89,3 +92,7 @@ colorscheme dawn
 " closetag autoload
 :let g:closetag_html_style=1
 :au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim 
+
+" for nerdcommeter
+filetype plugin on
+
