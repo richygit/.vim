@@ -4,6 +4,9 @@ set number
 set ruler
 syntax on
 
+" setup pathogen - will include vim plugins in bundle folder on runtimepath
+execute pathogen#infect()
+
 " Set encoding
 set encoding=utf-8
 
@@ -36,14 +39,11 @@ set modeline
 set modelines=10
 
 " Default font
-set guifont=Bitstream\ Vera\ Sans\ Mono:h7
+set guifont=Bitstream\ Vera\ Sans\ Mono:h4
 
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Turn off jslint errors by default
-let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
@@ -59,15 +59,12 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" clear search highlighting by hitting escape key
-nnoremap <CR> :noh<CR><CR>
+" clear search highlighting by hitting spacebar
+map <Space> :noh<CR>
 
 " scroll on wrapped lines too
 :nmap j gj
 :nmap k gk
-
-" setup pathogen - will include vim plugins in bundle folder on runtimepath
-execute pathogen#infect()
 
 " ensure you can create a swap file!
 set directory=.,$TEMP
@@ -82,6 +79,7 @@ let g:ctrlp_switch_buffer = 0
 " nerd tree key mapping
 let NERDTreeChDirMode=0
 nnoremap <leader>n :NERDTreeToggle .<CR>
+nmap F :NERDTreeFind<CR>
 
 " ack.vim key mapping
 nmap <D-F> :Ack<space>
@@ -89,10 +87,33 @@ nmap <D-F> :Ack<space>
 " set theme
 colorscheme dawn
 
-" closetag autoload
-:let g:closetag_html_style=1
-:au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim 
-
 " for nerdcommeter
-filetype plugin on
+filetype plugin indent on
 
+" insert newline by pressing enter or shift-enter
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" disable annoying balloons with jibberish text (hover)
+let g:syntastic_enable_balloons = 0
+" Turn off jslint errors by default
+let g:JSLintHighlightErrorLine = 0
+
+" syntastic for javascript
+let g:syntastic_javascript_checkers = ['eslint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Mimic :grep and make ag the default tool.
+let g:grepper = {
+    \ 'tools': ['ack', 'grep', 'git'],
+    \ 'open':  0,
+    \ 'jump':  1,
+    \ }

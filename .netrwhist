@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/richard/.rvm/gems/ruby-1.9.3-p484@tijuana/gems/actionmailer-3.2.16'
+let g:netrw_dirhist_2='/Users/richard/Sites/open-letter'
+let g:netrw_dirhist_3='/Users/richard/.rvm/gems/ruby-1.9.3-p484@tijuana/gems/actionmailer-3.2.16'
+let g:netrw_dirhist_4='/Users/richard/Sites/Tijuana'
+let g:netrw_dirhist_5='/Users/richard/Downloads/a-knights-api'
+let g:netrw_dirhist_6='/Users/richard/Sites/Tijuana'

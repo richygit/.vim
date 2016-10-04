@@ -55,9 +55,12 @@ set visualbell
 set guioptions-=T
 
 " Default font size
-set guifont=Menlo:h16
+set guifont=Menlo:h14
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
+
+set noballooneval
+setlocal balloonexpr=
